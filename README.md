@@ -1,10 +1,10 @@
 # JavaScript First-Iteration
 JavaScript First Iteration with Frost
 ______________________________________
-Objective: Make a website that has two pages:
+Objective: Make a website that has two pages
 - Home
 - Data
-
+_____________________________________
 Home: will need to look like (Image bellow) You can use your own text, colors, icons but structure needs to stay as in template
 
 ![Home example](https://i.imgur.com/KB8MFfP.png)
