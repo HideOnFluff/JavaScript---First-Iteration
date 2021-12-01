@@ -1,4 +1,4 @@
-# JavaScript---First-Iteration
+# JavaScript First-Iteration
 JavaScript First Iteration with Frost
 ______________________________________
 Objective: Make a website that has two pages:
