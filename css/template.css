@@ -18,7 +18,15 @@ body, html{
 }
 
 .container{
-    
+    display: grid;
+    grid-gap: 3vh;
+    height: 100vh;
+    grid-template-areas:
+        "M M M M    A A A A    N N N N"
+        "Y Y Y Y    B B B B    X X X X"
+        "Y Y Y Y    B B B B    X X X X"
+        "Y Y Y Y    B B B B    X X X X"
+        "L L L L    C C C C    Z Z Z Z";
 }
 
 /* .container{
@@ -30,6 +38,7 @@ body, html{
 } */
 
 .header{
+    grid: A;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -52,9 +61,8 @@ body, html{
 }
 
 
-.main-nav{
-    height: 4vh;
-    align-items: center;
+.main{
+    grid: B;
 }
 
 .main-nav__list{
@@ -96,6 +104,7 @@ body, html{
 }
 
 .footer{
+    grid: C;
     display: grid;
     grid-template-rows: 1fr 1fr;
 }
