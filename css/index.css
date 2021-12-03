@@ -94,17 +94,24 @@
 }
 
 .blogroll{
-    display: -ms-grid;
-    display: grid;
-    grid-template-columns: 3fr 1fr;
-    column-gap: 1.5vw;
-    padding: 1.5vh;
-    margin-bottom: 5vh;
+    column-gap: 5vw;
+    padding: 2rem;
+    border-radius: 0.5rem;
 }
 
-.blogroll__content{
-    display:flex;
-    flex-direction:column;
+.blogroll__list{
+    list-style: none;
+    display: grid;
+    grid-template-rows: 0.2fr repeat(6, 1fr);
+    row-gap: 5vh;
+    margin: 0;
+}
+
+.blogroll__item{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 5vw;
+    border-bottom: solid 0.1px var(--accent-color);
 }
 
 .blogroll__title{
@@ -114,52 +121,20 @@
     font-weight: bold;
     color: var(--accent-color);
 }
-
-.blogroll__item{
-    display: -ms-grid;
-    display: grid;
-    grid-template-columns: 1.5fr repeat(2, 1fr);
-    padding: 7px;
-    border-bottom: var(--accent-color) solid 1px;
-}
-
-
 .blogroll__text{
+    align-self: center;
+    text-decoration: none;
     color: var(--main-text-color);
 }
-
-.blogroll__social{
-    display:flex;
-    flex-direction:column;
-}
-
-.blogroll__list{
-    list-style-type: none;
-    align-items: stretch;
-    padding: 0;
-    margin: 0;
-}
-
-.blogroll__social-list{
-    list-style-type: none;
-    align-items: stretch;
-    padding: 0;
-    margin: 0;
-}
-
-
 .blogroll__social-link{
-
-    justify-content: left;
-    align-items: stretch;
-    display: -ms-grid;
-    list-style: none;
-    padding: 23px;
-    border-bottom: var(--accent-color) solid 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .blogroll__icon{
     align-self: left;
+    margin: 10px;
     width: 1rem;
     object-fit: contain;
 }
