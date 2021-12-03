@@ -3,6 +3,7 @@
     display: -ms-grid;
     display: grid;
     grid-template-columns: 2fr 1fr;
+    column-gap: 5vw;
     background-color: var(--secondary-bg-color);
     padding: 1.5vh;
     margin-bottom: 5vh;
@@ -39,13 +40,19 @@
     color: var(--accent-color);
 }
 
-.featured-article__img{
+.featured-article__article-img{
     align-self: center;
-    width: 15vw;
-    object-fit: contain;
     padding: 2rem;
-    border: #000 1px solid;
-    margin: 1rem 3rem 1rem 3rem;
+    border: var(--accent-color) 1px solid;
+    border-radius: 0.3rem;
+    margin: 0.1rem;
+}
+
+
+.featured-article__img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
 }
 
 .main-content{
@@ -64,7 +71,11 @@
     grid-template-columns: 1fr 2.7fr;
     padding: 7px;
     margin: 0px 3vw 0px 3vw;
-    border-bottom: var(--accent-color) solid 1px;
+}
+
+.main-content>article:not(:last-child){
+    border-bottom: none;
+    border-bottom: solid 1px var(--accent-color);
 }
 
 .main-content__publish-data{
@@ -111,6 +122,9 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     column-gap: 5vw;
+}
+
+.blogroll__name,.blogroll__reference,.blogroll__source,.blogroll__social-link{
     border-bottom: solid 0.1px var(--accent-color);
 }
 
@@ -122,20 +136,26 @@
     color: var(--accent-color);
 }
 .blogroll__text{
-    align-self: center;
+    inherits: none;
     text-decoration: none;
     color: var(--main-text-color);
 }
+
 .blogroll__social-link{
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
 }
 
-.blogroll__icon{
-    align-self: left;
+.blogroll__social-link--last{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.blogroll__icon{     
     margin: 10px;
-    width: 1rem;
+    width: 0.9rem;
     object-fit: contain;
 }
 
@@ -148,3 +168,16 @@
     background-color: var(--accent-color);
     border-radius: 0.3rem 0 0 0.3rem;
 }
+
+@media (max-width: 850px){
+
+    .featured-article{
+        display: -ms-grid;
+        display: flex;
+        flex-direction: column-reverse;
+        margin-top: 5vh;
+
+      .main-nav__item--selected{
+        border-radius: 0.3rem 0.3rem 0 0;
+      }
+  }
