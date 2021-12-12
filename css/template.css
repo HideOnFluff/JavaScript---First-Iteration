@@ -7,6 +7,7 @@
     --main-text-color: #000;
     --secondary-text-color: #fff;
     --accent-color: #C5454F;
+    --border-color: #dddad2;
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -158,6 +159,11 @@ body, html{
 }
 
 @media (max-width: 850px){
+
+
+    .header{
+        align-items: center;
+    }
 
   .main-nav__list{
         display: flex;

@@ -74,8 +74,7 @@
 }
 
 .main-content>article:not(:last-child){
-    border-bottom: none;
-    border-bottom: solid 1px var(--accent-color);
+    border-bottom: solid 1px var(--border-color);
 }
 
 .main-content__publish-data{
@@ -114,7 +113,6 @@
     list-style: none;
     display: grid;
     grid-template-rows: 0.2fr repeat(6, 1fr);
-    row-gap: 5vh;
     margin: 0;
 }
 
@@ -125,7 +123,7 @@
 }
 
 .blogroll__name,.blogroll__reference,.blogroll__source,.blogroll__social-link{
-    border-bottom: solid 0.1px var(--accent-color);
+    border-bottom: solid 0.1px var(--border-color);
 }
 
 .blogroll__title{
@@ -145,6 +143,7 @@
     display: flex;
     justify-content: left;
     align-items: center;
+    margin: 0;
 }
 
 .blogroll__social-link--last{
