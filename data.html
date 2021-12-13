@@ -46,35 +46,35 @@
                 <section class="parameters__hourly">
                     <h1>Hourly</h1>
                     <article class="parameters__checkbox">
-                        <input type="checkbox" name="Temp" id="Temp" onchange="hourlyParam(this.id);" value="temperature_2m"><p>Temperature</p>
+                        <input type="checkbox" name="Temp" onchange="hourlyParam(this.id);" id="temperature_2m"><p>Temperature</p>
                     </article>
                     <article class="parameters__checkbox">
-                        <input type="checkbox" name="Hum" id="Hum" onchange="hourlyParam(this.id);" value="relativehumidity_2m"><p>Humidity</p>
+                        <input type="checkbox" name="Hum" onchange="hourlyParam(this.id);" id="relativehumidity_2m"><p>Humidity</p>
                     </article>
                     <article class="parameters__checkbox">
-                        <input type="checkbox" name="WindSpeed" id="WindSpeed" onchange="hourlyParam(this.id);" value="windspeed_10m"><p>Wind Speed</p>
+                        <input type="checkbox" name="WindSpeed" onchange="hourlyParam(this.id);" id="windspeed_10m"><p>Wind Speed</p>
                     </article>
                     <article class="parameters__checkbox">
-                        <input type="checkbox" name="Rain" id="Rain" onchange="hourlyParam(this.id);" value="precipitation"><p>Precipitation</p>
+                        <input type="checkbox" name="Rain" onchange="hourlyParam(this.id);" id="precipitation"><p>Precipitation</p>
                     </article>
-                    <article class="parameters__checkbox"><input class="dailyclass" type="checkbox" name="Dew" id="Dew" onchange="hourlyParam(this.id);" value="dewpoint_2m"><p>Dew Point</p></article>
+                    <article class="parameters__checkbox"><input class="dailyclass" type="checkbox" name="Dew" onchange="hourlyParam(this.id);" id="dewpoint_2m"><p>Dew Point</p></article>
                 </section>
                 <section class="parameters__daily">
                     <h1>Daily</h1>
                     <article class="parameters__checkbox">
-                        <input type="checkbox" name="TempMax2M" id="TempMax2M" value="temperature_2m_max" onchange="dailyParam(this.id);"><p>Maximum Temperature</p>
+                        <input type="checkbox" name="TempMax2M" id="temperature_2m_max" onchange="dailyParam(this.id);"><p>Maximum Temperature</p>
                     </article>
                     <article class="parameters__checkbox">
-                        <input type="checkbox" name="TempMin2M" id="TempMin2M" value="temperature_2m_min" onchange="dailyParam(this.id);"><p>Minimum Temperature</p>
+                        <input type="checkbox" name="TempMin2M" id="temperature_2m_min" onchange="dailyParam(this.id);"><p>Minimum Temperature</p>
                     </article>
                     <article class="parameters__checkbox">
-                        <input type="checkbox" name="weathercode" id="weathercode" value="weathercode" onchange="dailyParam(this.id);"><p>Weather Code</p>
+                        <input type="checkbox" name="weathercode" id="weathercode" onchange="dailyParam(this.id);"><p>Weather Code</p>
                     </article>
                     <article class="parameters__checkbox">
-                        <input type="checkbox" name="sunrise" id="sunrise" value="sunrise" onchange="dailyParam(this.id);"><p>Sunrise</p>
+                        <input type="checkbox" name="sunrise" id="sunrise" onchange="dailyParam(this.id);"><p>Sunrise</p>
                     </article>
                     <article class="parameters__checkbox">
-                        <input type="checkbox" name="sunset" id="sunset" value="sunset" onchange="dailyParam(this.id);"><p>Sunset</p>
+                        <input type="checkbox" name="sunset" id="sunset" onchange="dailyParam(this.id);"><p>Sunset</p>
                     </article>
                 </section>
                 <section class="parameters__settings">
@@ -90,7 +90,7 @@
                         <p>Windspeed Unit</p>
                         <select name="windspeed-unit__select" id="windspeed-unit__select">
                             <option value="ms">m/s</option>
-                            <option selected value="kmh">Km/h</option>
+                            <option value="kmh">Km/h</option>
                             <option value="mph">Mph</option>
                             <option value="kn">Knots</option>
                         </select>
@@ -142,8 +142,10 @@
                 <section class="request-button">
                     <button id="get-btn">Show Data</button>
                 </section>
+                <p id="showData"></p>
+            <script src="./js/urlBuilder.js"></script>
             <script src="./js/request.js"></script>
-            
+            <script src="./js/table.js"></script>
         </main>
         <footer class="footer">
             <section class="footer__info">

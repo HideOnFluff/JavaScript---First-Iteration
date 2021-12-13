@@ -1,68 +1,6 @@
-const myUrlWithParams = new URL("https://api.open-meteo.com/v1/forecast");
-
-
-function citySelect() {
-    var x = document.getElementById("location-input__select");
-    switch (x.options[x.selectedIndex].value) {
-        case "Buenos Aires":  
-        document.getElementById("location-input__latitude").value = -34.60;
-        document.getElementById("location-input__longitude").value = -58.38;
-        break;
-        case "Rio de Janeiro":  
-        document.getElementById("location-input__latitude").value = -22.90;
-        document.getElementById("location-input__longitude").value = -43.20;
-        break;
-        case "New York":  
-        document.getElementById("location-input__latitude").value = 40.71;
-        document.getElementById("location-input__longitude").value = -74.00;
-        break;
-        case "Riga":  
-        document.getElementById("location-input__latitude").value = 56.94;
-        document.getElementById("location-input__longitude").value = -24.10;
-        break;
-        case "London":  
-        document.getElementById("location-input__latitude").value = 13.33;
-        document.getElementById("location-input__longitude").value = -80.00;
-            break;
-        case "Sydney":  
-        document.getElementById("location-input__latitude").value = -33.86;
-        document.getElementById("location-input__longitude").value = -151.20;
-        break;
-        }
-}
-
-let hourlyArray = [];
-let dailyArray = [];
-
-
-function hourlyParam(id) {
-    if(document.getElementById(id).checked){
-        hourlyArray.push(document.getElementById(id).value); 
-    } else {
-        const index = hourlyArray.indexOf(document.getElementById(id).value);
-            if (index > -1) {
-                hourlyArray.splice(index, 1);
-            }
-    }
-    console.log(hourlyArray);
-}
-
-function dailyParam(id) {
-    if(document.getElementById(id).checked){
-        dailyArray.push(document.getElementById(id).value); 
-    } else {
-        const index = dailyArray.indexOf(document.getElementById(id).value);
-            if (index > -1) {
-                dailyArray.splice(index, 1);
-            }
-    }
-    console.log(dailyArray);
-}
-
-
 const getBtn = document.getElementById('get-btn');
 
-const sendHttpRequest = (method, url, data) => {
+const sendHttpRequest = (method, url, data) => { //Sends the request to the API and fetches the data as JSON.
     return fetch(url, {
         method: method,
         headers: data ? {'Content-Type': 'application/json'} : {},
@@ -75,24 +13,24 @@ const sendHttpRequest = (method, url, data) => {
                     throw error;
             })
         }
+        console.log("Data received");
         return  response.json();
     })
 };
 
-const getData = () => {
-    myUrlWithParams.searchParams.append('latitude', document.getElementById("location-input__latitude").value);
-    myUrlWithParams.searchParams.append('longitude', document.getElementById("location-input__longitude").value);
-    if(hourlyArray.length){
-        myUrlWithParams.href += '&hourly=' + hourlyArray.join(',');
-    }
-    if(dailyArray.length){
-        myUrlWithParams.href += '&daily=' + dailyArray.join(',');
-        myUrlWithParams.searchParams.append('timezone', document.getElementById("location-input__timezone").value);
-    }
-    console.log(myUrlWithParams);
-    sendHttpRequest('GET',myUrlWithParams)
+
+
+
+const getData = () => { //Get button, sends the request to the API and fetches the data as JSON, then prints it and tries to create the table.
+    console.log(myurl());
+    sendHttpRequest('GET',myurl())
     .then(data => {
         console.log(data);
+        console.log(typeof data);
+        console.log(data.hourly); //if you don't choose any hourly parameter, it will return undefined
+        console.log(typeof data.hourly);
+        generateTable(data.hourly); 
+        //generateTable(dummyTestObject); works perfectly, but I don't understand why it doesn't work with the API data when I can still console.log it.
     })
     .catch(err => {
         console.log(err);
