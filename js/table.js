@@ -1,5 +1,3 @@
-
-
 function generateTable(dataTable, tableID) { //Generates the table with the data from the API.
  // EXTRACT VALUE FOR HTML HEADER. 
         let objKeys = Object.keys(dataTable);
