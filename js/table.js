@@ -1,59 +1,28 @@
-var dummyTestObject = [ // Dummy object for testing.
-    {
-    "ID": "1",
-    "Name": "Snep",
-    "Idk": "mom",
-    "Num": "187.4",
-    "lol": "mommy"
-    },
-    {
-    "Name": "Bnuuy",
-    "Idk": "bnuy",
-    },
-    {
-    "ID": "3",
-    "Name": "deer",
-    "Idk": "bleat",
-    "Num": "125.60",
-    "leeeeeeeel": "sup"
-    }
-]
 
-function generateTable(dataTable){
+
+function generateTable(dataTable, tableID) { //Generates the table with the data from the API.
  // EXTRACT VALUE FOR HTML HEADER. 
-        var col = [];
-        for (var i = 0; i < dataTable.length; i++) {
-            for (var key in dataTable[i]) {
-                if (col.indexOf(key) === -1) {
-                    col.push(key);
-                }
+        let objKeys = Object.keys(dataTable);
+        console.log(objKeys);
+        //generate table headers from object keys
+        let tableHeaders = "";
+        for (let i = 0; i < objKeys.length; i++) {
+            tableHeaders += "<th>" + objKeys[i] + "</th>";
+        }
+        //create table
+        let table = "<table><tr>" + tableHeaders + "</tr>";
+        //generate table rows
+        for (let i = 0; i < dataTable[objKeys[0]].length; i++) { //Since all the arrays have the same length, I only use the first array to get the length.
+            table += "<tr>";
+            for (let j = 0; j < objKeys.length; j++) {
+                table += "<td>" + dataTable[objKeys[j]][i] + "</td>";
             }
+            table += "</tr>";
         }
-
-        // CREATE DYNAMIC TABLE.
-        var table = document.createElement("table");
-
-
-        var tr = table.insertRow(-1);                   // TABLE ROW.
-
-        for (var i = 0; i < col.length; i++) {
-            var th = document.createElement("th");      // TABLE HEADER.
-            th.innerHTML = col[i];
-            tr.appendChild(th);
-        }
-
-        for (var i = 0; i < dataTable.length; i++) {
-
-            tr = table.insertRow(-1);
-
-            for (var j = 0; j < col.length; j++) {
-                var tabCell = tr.insertCell(-1);
-                tabCell.innerHTML = dataTable[i][col[j]];
-            }
-        }
-
-        var divContainer = document.getElementById("showData");
+        table += "</table>";
+        //insert table into html
+        let divContainer = document.getElementById(tableID);
         divContainer.innerHTML = "";
-        divContainer.appendChild(table);
+        divContainer.innerHTML = table;
         console.log("Table Generated");
     }

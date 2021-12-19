@@ -25,12 +25,14 @@ const getData = () => { //Get button, sends the request to the API and fetches t
     console.log(myurl());
     sendHttpRequest('GET',myurl())
     .then(data => {
-        console.log(data);
-        console.log(typeof data);
-        console.log(data.hourly); //if you don't choose any hourly parameter, it will return undefined
-        console.log(typeof data.hourly);
-        generateTable(data.hourly); 
-        //generateTable(dummyTestObject); works perfectly, but I don't understand why it doesn't work with the API data when I can still console.log it.
+        if(hourlyArray.length){
+        console.log(data.hourly);
+        generateTable(data.hourly, 'showData__hourly');
+        }
+        if(dailyArray.length){
+        console.log(data.daily);
+        generateTable(data.daily, 'showData__daily');
+        }
     })
     .catch(err => {
         console.log(err);
