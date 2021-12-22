@@ -21,6 +21,12 @@ function generateTable(dataTable, tableID) { //Generates the table with the data
         //insert table into html
         let divContainer = document.getElementById(tableID);
         divContainer.innerHTML = "";
-        divContainer.innerHTML = table;
+        switch (tableID) {
+            case "showData__hourly": divContainer.innerHTML += "<h2>Hourly</h2>";
+            break;
+            case "showData__daily": divContainer.innerHTML += "<h2>Daily</h2>";
+            break;
+        }
+        divContainer.innerHTML += table;
         console.log("Table Generated");
     }

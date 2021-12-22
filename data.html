@@ -25,126 +25,129 @@
         <main>
             <section class="location">
                 <h1>City</h1>
-                <input type="text" class="location-input" id="location-input__latitude"  value="-34">
-                <input type="text" class="location-input" id="location-input__longitude" value="-58.38">
-                <select name="location-input__select" id="location-input__select" onchange="citySelect();">
-                    <optgroup label="America">
-                        <option selected value="Buenos Aires">Buenos Aires</option>
-                        <option value="Rio de Janeiro">Rio de Janeiro</option>
-                        <option value="New York">New York</option>
-                    </optgroup>
-                    <optgroup label="Europe">
-                        <option value="Riga">Riga</option>
-                        <option value="London">London</option>
-                    </optgroup>
-                    <optgroup label="Oceania">
-                        <option value="Sydney">Sydney</option>
-                    </optgroup>
-                    
-                </select>
-                </section>
+                    <article class="location__input">
+                        <input type="text" class="location-input" id="location-input__latitude" aria-label="Latitude"  value="-34">
+                        <input type="text" class="location-input" id="location-input__longitude" value="-58.38">
+                            <select name="location-input__select" id="location-input__select" onchange="citySelect();">
+                                <optgroup label="America">
+                                    <option selected value="Buenos Aires">Buenos Aires</option>
+                                    <option value="Rio de Janeiro">Rio de Janeiro</option>
+                                    <option value="New York">New York</option>
+                                </optgroup>
+                                <optgroup label="Europe">
+                                    <option value="Riga">Riga</option>
+                                    <option value="London">London</option>
+                                </optgroup>
+                                <optgroup label="Oceania">
+                                    <option value="Sydney">Sydney</option>
+                                </optgroup>   
+                            </select>
+                </article>
+            </section>
+            <div class="parameters">
                 <section class="parameters__hourly">
-                    <h1>Hourly</h1>
-                    <article class="parameters__checkbox">
-                        <input type="checkbox" name="Temp" onchange="hourlyParam(this.id);" id="temperature_2m"><p>Temperature</p>
-                    </article>
-                    <article class="parameters__checkbox">
-                        <input type="checkbox" name="Hum" onchange="hourlyParam(this.id);" id="relativehumidity_2m"><p>Humidity</p>
-                    </article>
-                    <article class="parameters__checkbox">
-                        <input type="checkbox" name="WindSpeed" onchange="hourlyParam(this.id);" id="windspeed_10m"><p>Wind Speed</p>
-                    </article>
-                    <article class="parameters__checkbox">
-                        <input type="checkbox" name="Rain" onchange="hourlyParam(this.id);" id="precipitation"><p>Precipitation</p>
-                    </article>
-                    <article class="parameters__checkbox"><input class="dailyclass" type="checkbox" name="Dew" onchange="hourlyParam(this.id);" id="dewpoint_2m"><p>Dew Point</p></article>
+                        <h1>Hourly</h1>
+                        <article class="parameters__checkbox">
+                            <input type="checkbox" name="Temp" onchange="hourlyParam(this.id);" id="temperature_2m"><p>Temperature</p>
+                        </article>
+                        <article class="parameters__checkbox">
+                            <input type="checkbox" name="Hum" onchange="hourlyParam(this.id);" id="relativehumidity_2m"><p>Humidity</p>
+                        </article>
+                        <article class="parameters__checkbox">
+                            <input type="checkbox" name="WindSpeed" onchange="hourlyParam(this.id);" id="windspeed_10m"><p>Wind Speed</p>
+                        </article>
+                        <article class="parameters__checkbox">
+                            <input type="checkbox" name="Rain" onchange="hourlyParam(this.id);" id="precipitation"><p>Precipitation</p>
+                        </article>
+                        <article class="parameters__checkbox"><input class="dailyclass" type="checkbox" name="Dew" onchange="hourlyParam(this.id);" id="dewpoint_2m"><p>Dew Point</p></article>
                 </section>
                 <section class="parameters__daily">
-                    <h1>Daily</h1>
-                    <article class="parameters__checkbox">
-                        <input type="checkbox" name="TempMax2M" id="temperature_2m_max" onchange="dailyParam(this.id);"><p>Maximum Temperature</p>
-                    </article>
-                    <article class="parameters__checkbox">
-                        <input type="checkbox" name="TempMin2M" id="temperature_2m_min" onchange="dailyParam(this.id);"><p>Minimum Temperature</p>
-                    </article>
-                    <article class="parameters__checkbox">
-                        <input type="checkbox" name="weathercode" id="weathercode" onchange="dailyParam(this.id);"><p>Weather Code</p>
-                    </article>
-                    <article class="parameters__checkbox">
-                        <input type="checkbox" name="sunrise" id="sunrise" onchange="dailyParam(this.id);"><p>Sunrise</p>
-                    </article>
-                    <article class="parameters__checkbox">
-                        <input type="checkbox" name="sunset" id="sunset" onchange="dailyParam(this.id);"><p>Sunset</p>
-                    </article>
+                        <h1>Daily</h1>
+                        <article class="parameters__checkbox">
+                            <input type="checkbox" name="TempMax2M" id="temperature_2m_max" onchange="dailyParam(this.id);"><p>Maximum Temperature</p>
+                        </article>
+                        <article class="parameters__checkbox">
+                            <input type="checkbox" name="TempMin2M" id="temperature_2m_min" onchange="dailyParam(this.id);"><p>Minimum Temperature</p>
+                        </article>
+                        <article class="parameters__checkbox">
+                            <input type="checkbox" name="weathercode" id="weathercode" onchange="dailyParam(this.id);"><p>Weather Code</p>
+                        </article>
+                        <article class="parameters__checkbox">
+                            <input type="checkbox" name="sunrise" id="sunrise" onchange="dailyParam(this.id);"><p>Sunrise</p>
+                        </article>
+                        <article class="parameters__checkbox">
+                            <input type="checkbox" name="sunset" id="sunset" onchange="dailyParam(this.id);"><p>Sunset</p>
+                        </article>
                 </section>
+            </div>
                 <section class="parameters__settings">
-                    <h1>Settings</h1>
-                    <div class="temperature-unit">
-                        <p>Temperature Unit</p>
-                        <select name="temperature-unit__select" id="temperature-unit__select">
-                            <option value="celsius">Celsius °C</option>
-                            <option value="fahrenheit">Fahrenheit °F</option>
-                        </select>
-                    </div>
-                    <div class="windspeed-unit">
-                        <p>Windspeed Unit</p>
-                        <select name="windspeed-unit__select" id="windspeed-unit__select">
-                            <option value="ms">m/s</option>
-                            <option value="kmh">Km/h</option>
-                            <option value="mph">Mph</option>
-                            <option value="kn">Knots</option>
-                        </select>
-                    </div>
-                    <div class="precitipation-unit">
-                        <p>Precipitation Unit</p>
-                        <select name="precipitation-unit__select" id="precipitation-unit__select">
-                            <option value="mm">milimiters</option>
-                            <option value="inch">inch</option>
-                        </select>
-                    </div>
-                    <div class="timeformat">
-                        <p>Timeformat</p>
-                        <select name="timeformat__select" id="timeformat__select">
-                            <option value="iso8601">iso8601</option>
-                            <option value="unixtime">unixtime</option>
-                        </select>
-                    </div>
-                    <div class="timezone">
-                        <p>Timezone</p>
-                        <select name="timezone__select" id="timezone__select">
-                            <option value="America/Anchorage">America/Anchorage</option>
-                            <option value="America/Los_Angeles">America/Los_Angeles</option>
-                            <option value="America/Denver">America/Denver</option>
-                            <option value="America/Chicago">America/Chicago</option>
-                            <option value="America/New_York">America/New_York</option>
-                            <option value="America/Sao_Paulo">America/Sao_Paulo</option>
-                            <option selected value="UTC">UTC</option>
-                            <option value="Europe/London">Europe/London</option>
-                            <option value="Europe/Berlin">Europe/Berlin</option>
-                            <option value="Europe/Moscow">Europe/Moscow</option>
-                            <option value="Africa/Cairo">Africa/Cairo</option>
-                            <option value="Asia/Bangkok">Asia/Bangkok</option>
-                            <option value="Asia/Singapore">Asia/Singapore</option>
-                            <option value="Asia/Tokyo">Asia/Tokyo</option>
-                            <option value="Australia/Sydney">Australia/Sydney</option>
-                            <option value="Pacific/Auckland">Pacific/Auckland</option>
-                        </select>
-                    </div>
-                    <div class="past-days">
-                        <p>Past Days</p>
-                        <select name="past-days__select" id="past-days__select">
-                            <option value="0">0</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                        </select>
-                    </div>
+                        <h1>Settings</h1>
+                        <div class="parameters__select">
+                            <p>Temperature Unit</p>
+                            <select name="temperature-unit__select" id="temperature-unit__select">
+                                <option value="celsius">Celsius °C</option>
+                                <option value="fahrenheit">Fahrenheit °F</option>
+                            </select>
+                        </div>
+                        <div class="parameters__select">
+                            <p>Windspeed Unit</p>
+                            <select name="windspeed-unit__select" id="windspeed-unit__select">
+                                <option value="ms">m/s</option>
+                                <option value="kmh">Km/h</option>
+                                <option value="mph">Mph</option>
+                                <option value="kn">Knots</option>
+                            </select>
+                        </div>
+                        <div class="parameters__select">
+                            <p>Precipitation Unit</p>
+                            <select name="precipitation-unit__select" id="precipitation-unit__select">
+                                <option value="mm">milimiters</option>
+                                <option value="inch">inch</option>
+                            </select>
+                        </div>
+                        <div class="parameters__select">
+                            <p>Timeformat</p>
+                            <select name="timeformat__select" id="timeformat__select">
+                                <option value="iso8601">iso8601</option>
+                                <option value="unixtime">unixtime</option>
+                            </select>
+                        </div>
+                        <div class="parameters__select">
+                            <p>Timezone</p>
+                            <select name="timezone__select" id="timezone__select">
+                                <option value="America/Anchorage">America/Anchorage</option>
+                                <option value="America/Los_Angeles">America/Los_Angeles</option>
+                                <option value="America/Denver">America/Denver</option>
+                                <option value="America/Chicago">America/Chicago</option>
+                                <option value="America/New_York">America/New_York</option>
+                                <option value="America/Sao_Paulo">America/Sao_Paulo</option>
+                                <option selected value="UTC">UTC</option>
+                                <option value="Europe/London">Europe/London</option>
+                                <option value="Europe/Berlin">Europe/Berlin</option>
+                                <option value="Europe/Moscow">Europe/Moscow</option>
+                                <option value="Africa/Cairo">Africa/Cairo</option>
+                                <option value="Asia/Bangkok">Asia/Bangkok</option>
+                                <option value="Asia/Singapore">Asia/Singapore</option>
+                                <option value="Asia/Tokyo">Asia/Tokyo</option>
+                                <option value="Australia/Sydney">Australia/Sydney</option>
+                                <option value="Pacific/Auckland">Pacific/Auckland</option>
+                            </select>
+                        </div>
+                        <div class="parameters__select">
+                            <p>Past Days</p>
+                            <select name="past-days__select" id="past-days__select">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                            </select>
+                        </div>
                 </section>
-                <section class="request-button">
-                    <button id="get-btn">Show Data</button>
-                </section>
-                <p id="showData__hourly"></p>
-                <p id="showData__daily"></p>
-                <div class="showTable"></div>
+            </div>
+            <section class="request-button">
+                <button id="get-btn">Show Data</button>
+            <p id="showData__hourly"></p>
+            <p id="showData__daily"></p>
+            <div class="showTable"></div>
             <script src="./js/urlBuilder.js"></script>
             <script src="./js/request.js"></script>
             <script src="./js/table.js"></script>

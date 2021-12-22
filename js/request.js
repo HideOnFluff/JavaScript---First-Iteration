@@ -19,6 +19,11 @@ const sendHttpRequest = (method, url, data) => { //Sends the request to the API 
 };
 
 
+var idk = [
+    {
+        '': '',
+    }
+]
 
 
 const getData = () => { //Get button, sends the request to the API and fetches the data as JSON, then prints it and tries to create the table.
@@ -28,10 +33,14 @@ const getData = () => { //Get button, sends the request to the API and fetches t
         if(hourlyArray.length){
         console.log(data.hourly);
         generateTable(data.hourly, 'showData__hourly');
+        }else {
+            generateTable(idk, 'showData__hourly');
         }
         if(dailyArray.length){
         console.log(data.daily);
         generateTable(data.daily, 'showData__daily');
+        }else {
+            generateTable(idk, 'showData__daily');
         }
     })
     .catch(err => {
