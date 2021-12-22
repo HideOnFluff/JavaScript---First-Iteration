@@ -27,12 +27,13 @@ var idk = [
 
 
 const getData = () => { //Get button, sends the request to the API and fetches the data as JSON, then prints it and tries to create the table.
+    setInterval(() => {
     console.log(myurl());
     sendHttpRequest('GET',myurl())
     .then(data => {
         if(hourlyArray.length){
         console.log(data.hourly);
-        generateTable(data.hourly, 'showData__hourly');
+        generateTable(data.hourly, 'showData__hourly');      
         }else {
             generateTable(idk, 'showData__hourly');
         }
@@ -46,6 +47,7 @@ const getData = () => { //Get button, sends the request to the API and fetches t
     .catch(err => {
         console.log(err);
     })
+}, 120000);
 };
 
 getBtn.addEventListener('click', getData);
