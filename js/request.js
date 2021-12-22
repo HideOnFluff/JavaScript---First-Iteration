@@ -1,5 +1,11 @@
 const getBtn = document.getElementById('get-btn');
 
+var idk = [
+    {
+        '': '',
+    }
+]
+
 const sendHttpRequest = (method, url, data) => { //Sends the request to the API and fetches the data as JSON.
     return fetch(url, {
         method: method,
@@ -19,15 +25,7 @@ const sendHttpRequest = (method, url, data) => { //Sends the request to the API 
 };
 
 
-var idk = [
-    {
-        '': '',
-    }
-]
-
-
-const getData = () => { //Get button, sends the request to the API and fetches the data as JSON, then prints it and tries to create the table.
-    setInterval(() => {
+const getData = () => { //sends the request to the API and fetches the data as JSON, then prints it and tries to create the table.
     console.log(myurl());
     sendHttpRequest('GET',myurl())
     .then(data => {
@@ -47,7 +45,13 @@ const getData = () => { //Get button, sends the request to the API and fetches t
     .catch(err => {
         console.log(err);
     })
-}, 120000);
 };
 
-getBtn.addEventListener('click', getData);
+function btn () {
+    getData();
+    setInterval(() => {
+        getData();
+    }, 20000);
+}
+
+getBtn.addEventListener('click', btn);
