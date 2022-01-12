@@ -18,6 +18,7 @@ function generateTable(dataTable, tableID) { //Generates the table with the data
             table += "</tr>";
         }
         table += "</table>";
+        console.log(table);
         //insert table into html
         let divContainer = document.getElementById(tableID);
         divContainer.innerHTML = "";
@@ -29,4 +30,6 @@ function generateTable(dataTable, tableID) { //Generates the table with the data
         }
         divContainer.innerHTML += table;
         console.log("Table Generated");
-    }
+}
+
+

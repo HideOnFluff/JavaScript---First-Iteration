@@ -48,10 +48,14 @@ const getData = () => { //sends the request to the API and fetches the data as J
 };
 
 function btn () {
+    if(!hourlyArray.length && !dailyArray.length){
+        alert("Please select a parameter to get data");
+    }else {
     getData();
     setInterval(() => {
         getData();
     }, 20000);
+    }
 }
 
 getBtn.addEventListener('click', btn);
