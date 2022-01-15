@@ -1,6 +1,7 @@
 function generateTable(dataTable, tableID) { //Generates the table with the data from the API.
  // EXTRACT VALUE FOR HTML HEADER. 
         let objKeys = Object.keys(dataTable);
+        objKeys.sort();
         console.log(objKeys);
         //generate table headers from object keys
         let tableHeaders = "";
@@ -18,7 +19,6 @@ function generateTable(dataTable, tableID) { //Generates the table with the data
             table += "</tr>";
         }
         table += "</table>";
-        console.log(table);
         //insert table into html
         let divContainer = document.getElementById(tableID);
         divContainer.innerHTML = "";
