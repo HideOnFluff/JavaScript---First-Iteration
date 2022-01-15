@@ -1,5 +1,5 @@
 const getBtn = document.getElementById('get-btn');
-let interval;
+let interval = null;
 let intervalCheck = "";
 
 
@@ -51,11 +51,12 @@ const getData = () => { //sends the request to the API and fetches the data as J
 
 function btn () {
     intervalCheck = myurl();
+    if(interval != null) clearInterval(interval);
     if(!hourlyArray.length && !dailyArray.length){
         alert("Please select a parameter to get data");
     }else {
     getData();
-    interval = setInterval(getData, 2000);
+    interval = setInterval(getData, 500);
     }
 }
 
