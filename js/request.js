@@ -24,7 +24,7 @@ const sendHttpRequest = (method, url, data) => { //Sends the request to the API 
 
 const getData = () => { //sends the request to the API and fetches the data as JSON, then prints it and tries to create the table.
     console.log(myurl());
-    if(myurl() != intervalCheck) {
+    if(myurl() != intervalCheck) { //Checks if the url has changed since the last request, if so, it will stop the interval. Otherwise the data will change even if the user didn't press the button.
         clearInterval(interval);
         return;
     }
@@ -51,7 +51,7 @@ const getData = () => { //sends the request to the API and fetches the data as J
 
 function btn () {
     intervalCheck = myurl();
-    if(interval != null) clearInterval(interval);
+    if(interval != null) clearInterval(interval); //Checks if the interval is already running, if so, it will stop it. (This way the user won't create more than one interval if he spams the button)
     if(!hourlyArray.length && !dailyArray.length){
         alert("Please select a parameter to get data");
     }else {
